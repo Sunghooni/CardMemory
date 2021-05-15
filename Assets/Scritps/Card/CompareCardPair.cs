@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CompareCardPair : MonoBehaviour
 {
-    [Header ("Reference")]
+    [Header("Reference")]
     public ScoreManager _ScoreManager;
     public FinishCheck _FinishCheck;
 
-    [Header ("Selected")]
+    [Header("Selected")]
     public GameObject firstCard;
     public GameObject secondCard;
 

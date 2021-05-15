@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class StartCardSetting : MonoBehaviour
 {
+    [Header("Asset")]
     public GameObject blackCardCollection;
 
     private BlackCardCollection _BlackCardCollection;
     private List<GameObject> cardCollectionList;
     private StageManager _StageManager;
+
     private Vector3 cardSetPosition;
     private const int totalCardAmount = 52;
 

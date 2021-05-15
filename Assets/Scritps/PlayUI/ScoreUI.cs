@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class ScoreUI : PlayUI
 {
+    [Header("Reference")]
     public ScoreManager _ScoreManager;
+
+    [Header("Asset")]
     public GameObject endPosition;
 
     private const string basicSentence = "SCORE : ";

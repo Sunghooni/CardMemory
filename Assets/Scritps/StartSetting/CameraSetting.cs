@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraSetting : MonoBehaviour
 {
+    [Header("Reference")]
     public StageManager _StageManager;
 
     private void Start()

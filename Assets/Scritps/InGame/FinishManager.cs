@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class FinishManager : MonoBehaviour
 {
+    [Header("Reference")]
     public StageManager _StageManager;
     public ScoreManager _ScoreManager;
-
     public PlayUI ScoreUI;
     public PlayUI StageUI;
     public PlayUI TimerUI;
 
+    [Header("Asset")]
     public GameObject endPanel;
     public Light mainLight;
 

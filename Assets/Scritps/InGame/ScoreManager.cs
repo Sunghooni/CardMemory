@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    [Header("Reference")]
     public StageManager _StageManager;
+
+    [Header("Score")]
     public float playScore = 0;
 
     private float findPairScore;

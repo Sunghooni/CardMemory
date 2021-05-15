@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LoadRankData : MonoBehaviour
 {
+    [Header("Asset")]
     public GameObject stage1;
     public GameObject stage2;
     public GameObject stage3;

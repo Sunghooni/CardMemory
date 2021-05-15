@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    [Header("Asset")]
     public StageLevelSO stageLevelSO;
     public List<StageInfo> stageInfoList;
 
+    [Header("Setting")]
     public int stageLevel;
     public int vertCardNum;
     public int horzCardNum;

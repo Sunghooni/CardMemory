@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RankBackButton : MonoBehaviour
 {
+    [Header("Asset")]
     public GameObject startButton;
     public GameObject rankButton;
     public GameObject rankUI;

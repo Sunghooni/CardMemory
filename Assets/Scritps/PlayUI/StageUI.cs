@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class StageUI : PlayUI
 {
+    [Header("Reference")]
     public StageManager _StageManager;
+
+    [Header("Asset")]
     public GameObject endPosition;
 
     private TextMeshProUGUI tmp;

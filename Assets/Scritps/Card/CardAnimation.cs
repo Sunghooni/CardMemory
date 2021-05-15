@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardAnimation : MonoBehaviour
 {
+    [Header("CardState")]
     public bool isMotionPlaying = false;
     public bool isCardCoverable = false;
     public bool isCardOpened = false;
@@ -17,6 +18,7 @@ public class CardAnimation : MonoBehaviour
     public IEnumerator RotateCardMotion()
     {
         float timer = 0;
+        float coverDelay = 0.5f;
         bool isMoveUp = true;
 
         isMotionPlaying = true;
@@ -56,7 +58,7 @@ public class CardAnimation : MonoBehaviour
         {
             if (isCardCoverable)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(coverDelay);
                 StartCoroutine(RotateCardMotion());
 
                 isCardCoverable = false;

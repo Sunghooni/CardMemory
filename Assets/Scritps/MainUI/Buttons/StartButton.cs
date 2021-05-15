@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartButton : MonoBehaviour
 {
+    [Header("Asset")]
     public GameObject rankButton;
     public GameObject stageSelectButtons;
 

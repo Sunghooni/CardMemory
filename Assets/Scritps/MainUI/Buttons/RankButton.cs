@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RankButton : MonoBehaviour
 {
+    [Header("Asset")]
     public GameObject StartButton;
     public GameObject RankUI;
 

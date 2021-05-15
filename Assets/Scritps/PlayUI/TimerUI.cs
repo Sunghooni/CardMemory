@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class TimerUI : PlayUI
 {
+    [Header("Reference")]
     public StageManager _StageManager;
     public FinishCheck _FinishCheck;
     public GameObject endPosition;
+
+    [Header("Timer")]
     public float leftTime;
 
     private TextMeshProUGUI tmp;

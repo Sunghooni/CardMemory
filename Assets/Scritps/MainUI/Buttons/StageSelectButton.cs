@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StageSelectButton : MonoBehaviour
 {
+    [Header("Referenece")]
     public StageLevelSO stageLevelSO;
+
+    [Header("StageNumber")]
     public int stageNumber;
 
     public void StageButtonOnclick()

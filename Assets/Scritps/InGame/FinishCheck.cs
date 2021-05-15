@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class FinishCheck : MonoBehaviour
 {
+    [Header("Reference")]
     public StageManager _StageManager;
 
+    [Header("GameState")]
     public bool isFinished = false;
     public bool isTimeOut = false;
     public bool isGameClear = false;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardSelect : MonoBehaviour
 {
+    [Header("Reference")]
     public CompareCardPair _CompareCardPair;
     public FinishCheck _FinishCheck;
 
