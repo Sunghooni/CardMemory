@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardSelectForPC : MonoBehaviour
 {
     public CompareCardPair _CompareCardPair;
+    public FinishCheck _FinishCheck;
 
     private void Update()
     {
@@ -50,6 +51,10 @@ public class CardSelectForPC : MonoBehaviour
 
     private bool CheckIsInputable()
     {
+        if (_FinishCheck.isFinished)
+        {
+            return false;
+        }
         if (_CompareCardPair.firstCard != null && _CompareCardPair.secondCard != null)
         {
             return false;

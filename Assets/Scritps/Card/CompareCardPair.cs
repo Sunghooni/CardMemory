@@ -6,6 +6,7 @@ public class CompareCardPair : MonoBehaviour
 {
     [Header ("Reference")]
     public ScoreManager _ScoreManager;
+    public FinishCheck _FinishCheck;
 
     [Header ("Selected")]
     public GameObject firstCard;
@@ -46,15 +47,18 @@ public class CompareCardPair : MonoBehaviour
             {
                 if (!firstCard.name.Equals(secondCard.name) && !isCompared)
                 {
-                    isCompared = true;
                     firstAnimation.isCardCoverable = true;
                     secondAnimation.isCardCoverable = true;
+                    isCompared = true;
+
                     _ScoreManager.MinusScore();
                 }
                 else if (firstCard.name.Equals(secondCard.name))
                 {
                     firstCard = null;
                     secondCard = null;
+
+                    _FinishCheck.AddFoundPair();
                     _ScoreManager.AddScore();
                 }
             }

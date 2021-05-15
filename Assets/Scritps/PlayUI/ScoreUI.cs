@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ScoreUI : MonoBehaviour
+public class ScoreUI : PlayUI
 {
     public ScoreManager _ScoreManager;
-    private const string basicSentence = "SCORE : ";
+    public GameObject endPosition;
 
+    private const string basicSentence = "SCORE : ";
     private TextMeshProUGUI tmp;
 
     private void Awake()
@@ -24,5 +25,10 @@ public class ScoreUI : MonoBehaviour
     {
         string scoreSentence = basicSentence + _ScoreManager.playScore.ToString();
         tmp.text = scoreSentence;
+    }
+
+    public override void FinishMotion()
+    {
+        gameObject.transform.position = endPosition.transform.position;
     }
 }

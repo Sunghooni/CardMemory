@@ -8,7 +8,7 @@ public class StartCardSetting : MonoBehaviour
 
     private BlackCardCollection _BlackCardCollection;
     private List<GameObject> cardCollectionList;
-    private StageLevel _StageLevel;
+    private StageManager _StageManager;
     private Vector3 cardSetPosition;
     private const int totalCardAmount = 52;
 
@@ -17,7 +17,7 @@ public class StartCardSetting : MonoBehaviour
     {
         _BlackCardCollection = blackCardCollection.GetComponent<BlackCardCollection>();
         cardCollectionList = _BlackCardCollection.collection;
-        _StageLevel = gameObject.GetComponent<StageLevel>();
+        _StageManager = gameObject.GetComponent<StageManager>();
         cardSetPosition = new Vector3(0, 0.51f, 0f);
     }
 
@@ -29,7 +29,7 @@ public class StartCardSetting : MonoBehaviour
     private void SetCardsOnMap()
     {
         List<int> randomCards = GetRandomCardPairs();
-        int usingCardNum = _StageLevel.vertCardNum * _StageLevel.horzCardNum;
+        int usingCardNum = _StageManager.vertCardNum * _StageManager.horzCardNum;
 
         for (int i = 0; i < usingCardNum; i++)
         {
@@ -39,7 +39,7 @@ public class StartCardSetting : MonoBehaviour
             Instantiate(card, cardSetPosition, card.transform.rotation);
             randomCards.RemoveAt(randomCardNum);
 
-            if ((i + 1) % _StageLevel.horzCardNum == 0)
+            if ((i + 1) % _StageManager.horzCardNum == 0)
             {
                 cardSetPosition.x = 0;
                 cardSetPosition.z += card.transform.localScale.z;
@@ -54,7 +54,7 @@ public class StartCardSetting : MonoBehaviour
 
     private List<int> GetRandomCardPairs()
     {
-        int usingCardNum = _StageLevel.vertCardNum * _StageLevel.horzCardNum / 2;
+        int usingCardNum = _StageManager.vertCardNum * _StageManager.horzCardNum / 2;
         int minCardRange = 0;
         int maxCardRange = totalCardAmount;
         int randomNum = Random.Range(minCardRange, maxCardRange);
