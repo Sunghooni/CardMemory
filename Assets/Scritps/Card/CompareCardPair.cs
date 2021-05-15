@@ -55,6 +55,7 @@ public class CompareCardPair : MonoBehaviour
                 }
                 else if (firstCard.name.Equals(secondCard.name))
                 {
+                    SoundManager.instance.PlayRingSound();
                     firstCard = null;
                     secondCard = null;
 

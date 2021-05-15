@@ -19,6 +19,7 @@ public class FinishManager : MonoBehaviour
 
     public void ShowPlayResault()
     {
+        SoundManager.instance.PlayClearSound();
         Invoke(nameof(ShowEndUI), showResaultsDelay);
         Invoke(nameof(SaveBestScore), showResaultsDelay);
     }

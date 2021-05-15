@@ -17,6 +17,8 @@ public class CardAnimation : MonoBehaviour
 
     public IEnumerator RotateCardMotion()
     {
+        SoundManager.instance.PlayFlipSound();
+
         float timer = 0;
         float coverDelay = 0.5f;
         bool isMoveUp = true;

@@ -15,6 +15,7 @@ public class TimerUI : PlayUI
 
     private TextMeshProUGUI tmp;
     private bool isTimerFinished = false;
+    private bool isTimerWarning = false;
 
     private const string basicSentence = "TIMER : ";
     private const string timeUnit = "s";
@@ -33,6 +34,7 @@ public class TimerUI : PlayUI
     {
         SetTimerUI();
         TimeOutUpdate();
+        SetTimerWarning();
     }
 
     private void SetTimerUI()
@@ -44,12 +46,22 @@ public class TimerUI : PlayUI
         tmp.text = basicSentence + Mathf.Round(leftTime).ToString() + timeUnit;
     }
 
+    private void SetTimerWarning()
+    {
+        if (!isTimerWarning && Mathf.Round(leftTime) <= 5)
+        {
+            tmp.color = Color.red;
+            isTimerWarning = true;
+        }
+    }
+
     private void TimeOutUpdate()
     {
         if (!isTimerFinished && leftTime == 0)
         {
             isTimerFinished = true;
             _FinishCheck.SetTimeOut();
+            SoundManager.instance.PlayFailSound();
         }
         else if(_FinishCheck.isGameClear)
         {
@@ -60,5 +72,6 @@ public class TimerUI : PlayUI
     public override void FinishMotion()
     {
         gameObject.transform.position = endPosition.transform.position;
+        tmp.color = Color.white;
     }
 }
